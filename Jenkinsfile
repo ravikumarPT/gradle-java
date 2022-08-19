@@ -10,14 +10,15 @@ pipeline {
         GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
     }
     stages {
-        stage("unit-test") {
+        stage("Go Version") {
             steps {
-                echo 'UNIT TEST EXECUTION STARTED'
+                echo 'go version is here'
                 bat 'go version'
             }
         }
         stage('Go Make') {
 		    steps {
+			  echo 'TEST EXECUTION STARTED'
 			  bat 'make run'
 		    }
 		}
