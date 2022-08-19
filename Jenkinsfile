@@ -15,23 +15,11 @@ pipeline {
 		
 		stage('Build') {
             steps {
-                bat './gradlew build'
+                java -version
             }
         }
         
-        stage('Test') {
-            steps {
-                bat './gradlew test'
-            }
-        }
-        
-        stage('Check') {
-            steps {
-                bat './gradlew check'
-            }
-        }      
-		
-		stage('Five') {
+        stage('Five') {
 			steps {
 				echo 'Finished'
 			}
