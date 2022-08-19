@@ -15,7 +15,7 @@ pipeline {
 		
 		stage('Build') {
             steps {
-                java -version
+                  bat 'java -version'
             }
         }
         
