@@ -16,6 +16,10 @@ pipeline {
                 bat 'go version'
             }
         }
-        
+        stage('Go Make') {
+		    steps {
+			  bat 'make run'
+		    }
+		}
     }
 }
