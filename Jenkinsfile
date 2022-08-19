@@ -13,12 +13,16 @@ pipeline {
 			}
 		}
 		
-		stage('Build') {
+	stage('Java') {
             steps {
                   bat 'java -version'
             }
         }
-        
+        stage('Go') {
+            steps {
+                  bat 'go version'
+            }
+        }
         stage('Five') {
 			steps {
 				echo 'Finished'
