@@ -26,10 +26,16 @@ pipeline {
 			  bat 'go version'
 		    }
 		}
-		*/
+		
 		stage('Go Run') {
 		    steps {
 			  bat 'go run main.go'
+		    }
+		}
+		*/
+		stage('Go Make') {
+		    steps {
+			  bat 'make run'
 		    }
 		}
 		stage('Five') {
