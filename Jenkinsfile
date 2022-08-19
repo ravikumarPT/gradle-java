@@ -1,47 +1,21 @@
 pipeline {
-	agent any
-	
-	stages {
-		/*
-		stage('One') {
-			steps {
-				echo 'Hi, this is Soumitra from roytuts'
-			}
-		}
-		
-		stage('Two') {
-			steps {
-				input('Do you want to proceed?')
-			}
-		}
-		*/
-		/*
-		stage('Java') {
-            		steps {
-                  		bat 'java -version'
-            		}
-        	}
-		stage('Go') {
-		    steps {
-			  bat 'go version'
-		    }
-		}
-		
-		stage('Go Run') {
-		    steps {
-			  bat 'go run main.go'
-		    }
-		}
-		*/
-		stage('Go Make') {
-		    steps {
-			  bat 'make run'
-		    }
-		}
-		stage('Five') {
-				steps {
-					echo 'Finished'
-				}
-			}		
-		}
+    // install golang 1.14 on Jenkins node
+    agent any
+    tools {
+        go 'go1.14'
+    }
+    environment {
+        GO114MODULE = 'on'
+        CGO_ENABLED = 0 
+        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+    }
+    stages {
+        stage("unit-test") {
+            steps {
+                echo 'UNIT TEST EXECUTION STARTED'
+                bat 'go version'
+            }
+        }
+        
+    }
 }
