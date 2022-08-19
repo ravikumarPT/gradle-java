@@ -1,6 +1,8 @@
 pipeline {
 	agent any
+	
 	stages {
+		/*
 		stage('One') {
 			steps {
 				echo 'Hi, this is Soumitra from roytuts'
@@ -12,21 +14,21 @@ pipeline {
 				input('Do you want to proceed?')
 			}
 		}
-		
-	stage('Java') {
-            steps {
-                  bat 'java -version'
-            }
-        }
-        stage('Go') {
-            steps {
-                  bat 'go version'
-            }
-        }
-        stage('Five') {
-			steps {
-				echo 'Finished'
-			}
-		}		
-	}
+		*/
+		stage('Java') {
+            		steps {
+                  		bat 'java -version'
+            		}
+        	}
+		stage('Go') {
+		    steps {
+			  bat 'go version'
+		    }
+		}
+		stage('Five') {
+				steps {
+					echo 'Finished'
+				}
+			}		
+		}
 }
