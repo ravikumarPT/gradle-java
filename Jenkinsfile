@@ -15,6 +15,7 @@ pipeline {
 			}
 		}
 		*/
+		/*
 		stage('Java') {
             		steps {
                   		bat 'java -version'
@@ -23,6 +24,12 @@ pipeline {
 		stage('Go') {
 		    steps {
 			  bat 'go version'
+		    }
+		}
+		*/
+		stage('Go Run') {
+		    steps {
+			  bat 'go run main.go'
 		    }
 		}
 		stage('Five') {
