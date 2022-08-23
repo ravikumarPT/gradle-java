@@ -13,4 +13,6 @@ jobs:
         go-version: ${{ matrix.go-version }}
     - uses: actions/checkout@v3
     - run: go run main.go
-
+    
+    - uses: actions/checkout@v3
+    - run: go version
